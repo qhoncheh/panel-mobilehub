@@ -1,0 +1,140 @@
+.PanelLayout {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-1);
+}
+
+.main {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  position: relative;
+  right: 250px;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-inc {
+  width: calc(100% - 60px);
+  right: 60px;
+}
+
+.main-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  border-bottom: 2px solid var(--color-2);
+  color: white;
+}
+
+.main-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.main-header-center {
+  width: 300px;
+  max-width: 40%;
+  height: 40px;
+  border: 1px solid var(--color-2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.main-header-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.main-header-left img {
+  width: 45px;
+  height: 45px;
+  border-radius: var(--br, 50%);
+  object-fit: cover;
+  border: 1px solid var(--color-2);
+}
+
+@media (max-width: 767px) {
+  .main {
+    width: 100%;
+    right: 0;
+  }
+
+  .main-header {
+    height: 65px;
+    padding-inline: 15px;
+  }
+
+  .main-header-center {
+    display: none;
+  }
+}
+.drop-settings-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.drop-settings {
+  width: 200px;
+  height: 400px;
+  top: -20px;
+  position: fixed;
+  left: -20px;
+  background-color: var(--color-2);
+  z-index: 41;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  border-radius: var(--br);
+  padding: 10px;
+}
+.drop-settings-bg-active {
+  opacity: 1;
+  visibility: visible;
+}
+.drop-settings-active {
+  opacity: 1;
+  visibility: visible;
+  top: 30px;
+  left: 30px;
+}
+
+.drop-settings-top {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.drop-settings-top-item {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: gray;
+  border-radius: var(--br);
+  padding-right: 10px;
+
+}
+.drop-settings-top-item-active {
+  background-color: black;
+  color: white;
+}

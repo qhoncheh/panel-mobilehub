@@ -1,0 +1,297 @@
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* background: var(--color-2); */
+  border-left: 2px solid var(--color-2);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.sidebar-handle {
+  width: 60px;
+}
+.sidebar-handle .sidebar-title {
+  display: none;
+}
+.sideBar-theme {
+  width: 100%;
+  padding-inline: 20px;
+  /* margin-top: 1\0px; */
+}
+
+.sideBar-theme-inner {
+  background-color: var(--color-2);
+  width: 100%;
+  padding: 8px;
+  border-radius: var(--br);
+  display: flex;
+  & button {
+    width: 50%;
+    height: 45px;
+    color: var(--color-7);
+    cursor: pointer;
+  }
+}
+.sideBar-theme-inner-btn-active {
+  background-color: var(--color-3);
+  color: var(--br) !important;
+  border-radius: 5px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .sidebar {
+    transform: translateX(100%);
+  }
+
+  .sidebar-handle {
+    width: 250px;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Head ===== */
+.sidebar-head {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Body ===== */
+.sidebar-body {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== New Project ===== */
+.sidebar-new-project {
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.sidebar-new-project svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-handle .sidebar-new-project span {
+  display: none;
+}
+
+/* ===== Menu ===== */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-item {
+  transition: margin 0.3s ease;
+  position: relative;
+}
+
+.sidebar-item.active {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.sideBar-profile{
+width: 100%;
+padding: 20px;
+}
+.sideBar-profile-inner {
+  width: 100%;
+  background-color: var(--color-2);
+  border-radius: var(--br);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sideBar-profile-inner button {
+  width: 100%;
+  height: 45px;
+  border: 1px solid var(--color-8);
+  border-radius: 8px;
+  color: var(--color-8);
+}
+
+.sideBar-profile-inner button:hover {
+  background-color: var(--color-8);
+  color: var(--br);
+}
+
+.sideBar-profile-top {
+width: 100%;
+height: 50px;
+padding: 15px;
+border-radius: 8px;
+cursor: pointer;
+display: flex;
+align-items: center;
+& img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+&:hover {
+  background-color: var(--color-8);
+}
+}
+
+/* ===== Button ===== */
+.sidebar-item button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-inline-start: 8px;
+  color: var(--color-7);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.sidebar-item button svg {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex-shrink: 0;
+  fill: var(--color-7);
+}
+
+/* Hover */
+.sidebar-item button:hover {
+  background: var(--color-8);
+  color: white;
+}
+
+.sidebar-item button:hover svg {
+  fill: white;
+}
+
+/* Active */
+.sidebar-item.active button {
+  background: var(--color-8);
+  color: white;
+}
+
+.sidebar-item.active svg {
+  fill: white;
+}
+
+/* ===== Collapse Mode ===== */
+.sidebar-handle .sidebar-item button {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar-handle .sidebar-item button span {
+  display: none;
+}
+
+/* ===== SubMenu ===== */
+.sidebar-submenu {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.sidebar-item.active .sidebar-submenu {
+  max-height: 500px;
+}
+
+/* ===== Side Hover Menu ===== */
+
+/* پیش فرض: اصلا نمایش داده نشود */
+.sidebar-items-sideMenu {
+  position: absolute;
+  top: 0;
+  left: -215px;
+  width: 200px;
+  background: var(--color-2);
+  border-radius: var(--br);
+  display: none;
+  flex-direction: column;
+}
+
+/* فقط وقتی sidebar بسته است */
+.sidebar-handle .sidebar-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -215px;
+  width: 215px;
+  height: 100%;
+}
+
+/* hover فقط در حالت collapse */
+.sidebar-handle .sidebar-item:hover > .sidebar-items-sideMenu {
+  display: flex;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .sidebar-handle .sidebar-items-sideMenu {
+    display: none !important;
+  }
+}
+
+/* items */
+.sidebar-items-sideMenu-item {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-inline-start: 15px;
+  color: var(--color-7);
+}
+
+.sidebar-items-sideMenu-item:hover {
+  color: var(--color-8);
+  cursor: pointer;
+}
+
+/* ===== Submenu items ===== */
+.sidebar-submenu-item {
+  height: 40px;
+  padding-inline-start: 40px;
+  display: flex;
+  align-items: center;
+  color: var(--color-7);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar-submenu-item:hover {
+  color: white;
+}
+
+/* ===== Mobile Fix ===== */
+@media (max-width: 767px) {
+  .sidebar-handle .sidebar-item button {
+    justify-content: flex-start;
+  }
+
+  .sidebar-handle .sidebar-item button span {
+    display: inline;
+  }
+}

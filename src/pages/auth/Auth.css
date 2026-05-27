@@ -1,0 +1,167 @@
+.auth {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 20px;
+} 
+
+/* ===================== */
+/* MAIN CONTAINER */
+.auth-container{
+    width: 480px;
+    max-width: 100%;
+    display: flex;
+    padding-block: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ===================== */
+/* LOGO */
+.auth-logo {
+    width: 60px;
+    margin-bottom: 30px;
+}
+
+/* ===================== */
+/* DIVIDER */
+.auth-line {
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        hsla(0,0%,100%,0) 0,
+        var(--color-3) 50%,
+        transparent
+    );
+}
+
+/* ===================== */
+/* SWITCH BUTTON */
+.auth-switch {
+    width: 240px;
+    max-width: 100%;
+    padding: 3px;
+    border: 1px solid var(--color-4);
+    margin-top: 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.auth-switch button {
+    height: 40px;
+    width: 50%;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    background-color: unset;
+}
+
+/* ACTIVE */
+.auth-switch-btn-active {
+    background-color: var(--color-3) !important;
+    color: var(--color-1) !important;
+}
+
+/* BUTTON */
+.auth-btn {
+    height: 40px;
+    width: 50%;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ===================== */
+/* FOOTER */
+.auth-footer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.auth-footer-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 61px;
+}
+
+/* موبایل */
+@media (max-width: 480px) {
+  .auth-footer-svg {
+    max-height: 40px;
+  }
+}
+
+/* تبلت */
+@media (max-width: 768px) {
+  .auth-footer-svg {
+    max-height: 50px;
+  }
+}
+
+
+.auth-footer-inner{
+    width: 100%;
+    height: 61px;
+    background: linear-gradient(
+        180deg,
+        rgba(5,5,12,0) 0,
+        var(--color-1) 100%
+    );
+    margin-top: -61px;
+}
+
+/* ================================= */
+/* 📱 MOBILE (max 480px) */
+@media (max-width: 480px) {
+    .auth {
+        padding-inline: 12px;
+    }
+
+    .auth-container {
+        width: 100%;
+        padding-block: 20px;
+    }
+
+    .auth-logo {
+        width: 48px;
+        margin-bottom: 20px;
+    }
+
+    .auth-switch {
+        width: 100%;
+    }
+}
+
+/* ================================= */
+/* 📱📲 TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+    .auth-container {
+        width: 90%;
+    }
+
+    .auth-logo {
+        width: 56px;
+    }
+}
+
+/* ================================= */
+/* 💻 DESKTOP */
+@media (min-width: 1024px) {
+    .auth-container {
+        width: 480px;
+    }
+}
